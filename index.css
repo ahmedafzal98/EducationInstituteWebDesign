@@ -13,23 +13,53 @@
   background-image: url("./images/3.png");
   background-size: cover;
 }
-.navbar {
+/* .navbar {
   margin-top: 10px;
+  width: 100%;
+  background-color: red;
   display: flex;
   justify-content: center;
-}
-.nav-container {
+  align-items: center;
+} */
+.navbar {
+  padding-top: 10px;
   width: 70%;
   display: flex;
-  float: left;
   align-items: center;
+  margin: auto;
+  justify-content: space-evenly;
   list-style: none;
 }
 
-.nav-container .logo {
+.navbarresponsive {
+  width: 100%;
+  height: auto;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding-top: 20px;
+  align-items: center;
+  z-index: 2;
+  display: block;
+  background-color: #ffc178;
+}
+.navbarresponsive a {
+  color: #252c3a;
+  font-size: 14px;
+}
+.navbarresponsive li {
+  padding: 10px;
+}
+.navbar .logo {
   width: 30px;
   height: 30px;
-  margin-right: auto;
+}
+.main-section #icon {
+  position: fixed;
+  top: 0;
+  left: 85%;
+  display: none;
+  margin-top: 10px;
 }
 li {
   padding-right: 20px;
@@ -49,8 +79,8 @@ li {
   text-decoration: none;
   color: #252c3a;
 }
-.nav-container .active a,
-.nav-container :hover {
+.navbar .active a,
+.navbar :hover {
   color: #ffc178;
   text-decoration: underline;
 }
@@ -385,25 +415,19 @@ li a {
   border: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .menu-icon {
     display: flex;
-  }
-  .navbar {
-    width: 100%;
   }
 
   .logo {
     display: none;
   }
-  .nav-container {
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
-    flex-direction: row;
+  .navbar {
+    display: none;
   }
-  .nav-container.active {
+
+  .navbar.active {
     display: flex;
   }
   li a {
@@ -415,6 +439,16 @@ li a {
     height: 80vh;
     background-repeat: no-repeat;
     background-image: url("./images/3.png");
+  }
+  .main-section #icon {
+    display: block;
+    float: right;
+    margin-right: 10px;
+  }
+  .text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   .grid-container {
     width: 100%;
@@ -486,7 +520,6 @@ li a {
     width: 100%;
     height: 190vh;
     margin-top: 20px;
-    /* overflow-y: hidden; */
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
