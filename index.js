@@ -8,7 +8,5 @@ document.addEventListener("DOMContentLoaded",()=>{
        }else{
         nav.className = 'navbar'
        }
-
-        console.log(nav);
     })
 })
